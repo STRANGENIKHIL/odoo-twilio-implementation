@@ -79,6 +79,30 @@
             </field>
         </record>
 
+        <!-- Graph View -->
+        <record id="view_phone_call_log_graph" model="ir.ui.view">
+            <field name="name">phone.call.log.graph</field>
+            <field name="model">phone.call.log</field>
+            <field name="arch" type="xml">
+                <graph string="Call Logs Analysis" type="bar" sample="1">
+                    <field name="status" group="True"/>
+                    <field name="call_date" interval="day"/>
+                </graph>
+            </field>
+        </record>
+
+        <!-- Pivot View -->
+        <record id="view_phone_call_log_pivot" model="ir.ui.view">
+            <field name="name">phone.call.log.pivot</field>
+            <field name="model">phone.call.log</field>
+            <field name="arch" type="xml">
+                <pivot string="Call Logs Pivot Analysis" sample="1">
+                    <field name="status" type="row"/>
+                    <field name="call_date" interval="month" type="col"/>
+                </pivot>
+            </field>
+        </record>
+
         <!-- Search View -->
         <record id="view_phone_call_log_search" model="ir.ui.view">
             <field name="name">phone.call.log.search</field>
@@ -88,9 +112,20 @@
                     <field name="partner_id" string="Customer"/>
                     <field name="phone" string="Phone Number"/>
                     <field name="status" string="Status"/>
+                    <field name="user_id" string="User"/>
+                    
+                    <!-- Quick Filters -->
+                    <filter string="My Calls" name="my_calls" domain="[('user_id', '=', uid)]"/>
+                    <separator/>
+                    <filter string="Connected" name="status_connected" domain="[('status', '=', 'connected')]"/>
+                    <filter string="No Answer" name="status_no_answer" domain="[('status', '=', 'no_answer')]"/>
+                    <filter string="Busy" name="status_busy" domain="[('status', '=', 'busy')]"/>
+
+                    <!-- Group By Options -->
                     <group expand="0" string="Group By">
                         <filter string="Customer" name="group_by_partner" context="{'group_by': 'partner_id'}"/>
                         <filter string="Status" name="group_by_status" context="{'group_by': 'status'}"/>
+                        <filter string="User" name="group_by_user" context="{'group_by': 'user_id'}"/>
                         <filter string="Date" name="group_by_date" context="{'group_by': 'call_date'}"/>
                     </group>
                 </search>

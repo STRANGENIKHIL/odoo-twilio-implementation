@@ -32,7 +32,7 @@ class ResPartner(models.Model):
             'name': 'Call Logs',
             'type': 'ir.actions.act_window',
             'res_model': 'phone.call.log',
-            'view_mode': 'list,form,kanban',
+            'view_mode': 'list,form,kanban,graph,pivot',
             'domain': [('partner_id', '=', self.id)],
             'context': {
                 'default_partner_id': self.id,
