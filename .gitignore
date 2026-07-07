@@ -1,0 +1,13 @@
+using ai efficient/
+graphify-out/
+.agents/
+DESIGN.md
+custom_addons/phone_call_notes/README.md
+HOW_TO_RUN.md
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.zip
+*.log
+share/

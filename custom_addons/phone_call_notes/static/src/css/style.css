@@ -1,0 +1,83 @@
+/* Targeted styles for the Phone Call Notes views to match Cal.com design system */
+
+/* Rounded corners and generous padding */
+.o_phone_call_notes_wizard,
+.o_phone_call_notes_form,
+.o_phone_call_notes_tree {
+    border-radius: 12px !important;
+}
+
+/* Primary buttons styling (Black canvas primary CTA) */
+.o_phone_call_notes_wizard .btn-primary,
+.o_phone_call_notes_form .btn-primary,
+.o_phone_call_notes_tree .btn-primary,
+.oe_stat_button[name="action_view_call_logs"] {
+    background-color: #111111 !important;
+    border-color: #111111 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.o_phone_call_notes_wizard .btn-primary:hover,
+.o_phone_call_notes_form .btn-primary:hover,
+.o_phone_call_notes_tree .btn-primary:hover {
+    background-color: #242424 !important;
+    border-color: #242424 !important;
+}
+
+/* Secondary/Cancel buttons styling (Bordered white secondary CTA) */
+.o_phone_call_notes_wizard .btn-secondary,
+.o_phone_call_notes_form .btn-secondary,
+.o_phone_call_notes_tree .btn-secondary {
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    color: #111111 !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    transition: background-color 0.2s ease;
+}
+
+.o_phone_call_notes_wizard .btn-secondary:hover,
+.o_phone_call_notes_form .btn-secondary:hover,
+.o_phone_call_notes_tree .btn-secondary:hover {
+    background-color: #f9fafb !important;
+}
+
+/* Custom badge styling for color statuses */
+.o_phone_call_notes_badge_pending {
+    background-color: #fff7ed !important;
+    color: #fb923c !important;
+    border: 1px solid #ffedd5 !important;
+    border-radius: 9999px !important;
+    padding: 3px 10px !important;
+    font-weight: 600 !important;
+}
+
+.o_phone_call_notes_badge_connected {
+    background-color: #ecfdf5 !important;
+    color: #34d399 !important;
+    border: 1px solid #d1fae5 !important;
+    border-radius: 9999px !important;
+    padding: 3px 10px !important;
+    font-weight: 600 !important;
+}
+
+.o_phone_call_notes_badge_busy {
+    background-color: #fdf2f8 !important;
+    color: #ec4899 !important;
+    border: 1px solid #fce7f3 !important;
+    border-radius: 9999px !important;
+    padding: 3px 10px !important;
+    font-weight: 600 !important;
+}
+
+.o_phone_call_notes_badge_no_answer {
+    background-color: #f5f3ff !important;
+    color: #8b5cf6 !important;
+    border: 1px solid #ede9fe !important;
+    border-radius: 9999px !important;
+    padding: 3px 10px !important;
+    font-weight: 600 !important;
+}

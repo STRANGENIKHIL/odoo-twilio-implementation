@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_phone_call_wizard_form" model="ir.ui.view">
+            <field name="name">phone.call.wizard.form</field>
+            <field name="model">phone.call.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Call Contact" class="o_phone_call_notes_wizard">
+                    <sheet>
+                        <group>
+                            <field name="partner_id" options="{'no_open': True}"/>
+                            <field name="phone"/>
+                            <field name="status" widget="radio" options="{'horizontal': true}"/>
+                            <field name="notes" placeholder="Write call notes here..."/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_save" string="Save" type="object" class="btn-primary" data-hotkey="q"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

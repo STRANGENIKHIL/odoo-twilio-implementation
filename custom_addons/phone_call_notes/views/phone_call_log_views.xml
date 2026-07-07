@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record id="view_phone_call_log_list" model="ir.ui.view">
+            <field name="name">phone.call.log.list</field>
+            <field name="model">phone.call.log</field>
+            <field name="arch" type="xml">
+                <list string="Call Logs" duplicate="0" class="o_phone_call_notes_tree">
+                    <field name="partner_id"/>
+                    <field name="phone"/>
+                    <field name="call_date"/>
+                    <field name="status" widget="badge" 
+                           decoration-success="status == 'connected'" 
+                           decoration-warning="status == 'pending'" 
+                           decoration-danger="status == 'busy'" 
+                           decoration-muted="status == 'no_answer'"/>
+                    <field name="user_id"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_phone_call_log_form" model="ir.ui.view">
+            <field name="name">phone.call.log.form</field>
+            <field name="model">phone.call.log</field>
+            <field name="arch" type="xml">
+                <form string="Call Log" class="o_phone_call_notes_form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="partner_id"/>
+                                <field name="phone"/>
+                                <field name="status"/>
+                            </group>
+                            <group>
+                                <field name="call_date"/>
+                                <field name="user_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Call Notes" name="notes">
+                                <field name="notes" placeholder="Detailed call transcription..."/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Kanban View -->
+        <record id="view_phone_call_log_kanban" model="ir.ui.view">
+            <field name="name">phone.call.log.kanban</field>
+            <field name="model">phone.call.log</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="status" class="o_kanban_small_column" record_draggable="false" quick_create="false">
+                    <field name="partner_id"/>
+                    <field name="phone"/>
+                    <field name="call_date"/>
+                    <field name="status"/>
+                    <templates>
+                        <t t-name="card">
+                            <div class="oe_kanban_global_click o_kanban_record">
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="partner_id"/>
+                                    </strong>
+                                    <div>
+                                        <field name="phone"/>
+                                    </div>
+                                    <div class="text-muted">
+                                        <field name="call_date"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_phone_call_log_search" model="ir.ui.view">
+            <field name="name">phone.call.log.search</field>
+            <field name="model">phone.call.log</field>
+            <field name="arch" type="xml">
+                <search string="Search Call Logs">
+                    <field name="partner_id" string="Customer"/>
+                    <field name="phone" string="Phone Number"/>
+                    <field name="status" string="Status"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Customer" name="group_by_partner" context="{'group_by': 'partner_id'}"/>
+                        <filter string="Status" name="group_by_status" context="{'group_by': 'status'}"/>
+                        <filter string="Date" name="group_by_date" context="{'group_by': 'call_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

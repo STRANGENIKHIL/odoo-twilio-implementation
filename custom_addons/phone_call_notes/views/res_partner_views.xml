@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_inherit_phone" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.phone</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- Add smart button to the top of partner form -->
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" type="object" name="action_view_call_logs" icon="fa-phone">
+                        <field string="Call Logs" name="call_log_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+
+                <!-- Inject the Call button next to the phone field -->
+                <xpath expr="//field[@name='phone']" position="after">
+                    <button name="action_open_call_wizard" 
+                            string="Call" 
+                            type="object" 
+                            class="btn-outline-primary oe_inline ml-2" 
+                            invisible="not phone"
+                            icon="fa-phone"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Window Action -->
+        <record id="action_phone_call_log" model="ir.actions.act_window">
+            <field name="name">Call Logs</field>
+            <field name="res_model">phone.call.log</field>
+            <field name="view_mode">list,form,kanban</field>
+            <field name="search_view_id" ref="view_phone_call_log_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No call logs found. Start logging phone calls from Contacts!
+                </p>
+            </field>
+        </record>
+
+        <!-- Top-level Menu: Phone -->
+        <menuitem id="menu_phone_root" name="Phone" web_icon="phone_call_notes,static/description/icon.png" sequence="25"/>
+
+        <!-- Sub-menu: Call Logs -->
+        <menuitem id="menu_phone_call_logs" name="Call Logs" parent="menu_phone_root" action="action_phone_call_log" sequence="10"/>
+    </data>
+</odoo>
