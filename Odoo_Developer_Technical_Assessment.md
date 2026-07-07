@@ -293,7 +293,8 @@ Search by:
 Submit:
 
 -   Module ZIP
--   GitHub Repository (Preferred)
+-   GitHub Repository (Preferred): [odoo-twilio-implementation](https://github.com/STRANGENIKHIL/odoo-twilio-implementation)
+-   Live Railway Deployment: [odoo-twilio-implementation-production.up.railway.app](https://odoo-twilio-implementation-production.up.railway.app)
 -   Installation Steps
 -   2--3 Minute Demo Video
 
