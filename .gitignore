@@ -11,3 +11,5 @@ __pycache__/
 *.zip
 *.log
 share/
+odoo.conf
+odoo_data/
