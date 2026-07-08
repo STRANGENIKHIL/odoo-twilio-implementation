@@ -19,5 +19,11 @@
 
         <!-- Sub-menu: Call Logs -->
         <menuitem id="menu_phone_call_logs" name="Call Logs" parent="menu_phone_root" action="action_phone_call_log" sequence="10"/>
+
+        <!-- Force attachments/assets to be stored in the database for ephemeral cloud environments -->
+        <record id="set_attachment_location_db" model="ir.config_parameter">
+            <field name="key">ir_attachment.location</field>
+            <field name="value">db</field>
+        </record>
     </data>
 </odoo>

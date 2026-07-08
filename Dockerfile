@@ -5,4 +5,4 @@ COPY ./custom_addons /mnt/extra-addons
 
 USER root
 
-CMD ["sh", "-c", "unset PORT; exec /entrypoint.sh odoo --proxy-mode -d Nikhil -u web"]
+CMD ["sh", "-c", "unset PORT; exec /entrypoint.sh odoo --proxy-mode -d ${DB_NAME:-Nikhil} -u web"]
