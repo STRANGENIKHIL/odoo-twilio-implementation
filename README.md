@@ -4,8 +4,7 @@ This repository contains the solution for the Odoo Developer Internship Technica
 
 ## Live Demo & Deployment
 
-The application is deployed and available live on Railway:
-- **Live Deployment Link**: [https://odoo-twilio-implementation-production.up.railway.app](https://odoo-twilio-implementation-production.up.railway.app)
+The application is deployed and available live on Render:
 
 ---
 
